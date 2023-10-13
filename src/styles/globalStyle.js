@@ -1,7 +1,8 @@
-import { createGlobalStyle } from "styled-components/macro";
-import "@fontsource/space-grotesk";
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+
+@import url('https://fonts.cdnfonts.com/css/haettenschweiler');
 
 * {
   margin: 0;
@@ -21,13 +22,13 @@ select,
 textarea { 
   margin: 0;
   padding: 0;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Haettenschweiler", sans-serif;
   list-style: none;
   font-size: 14px;
   font-weight: 400;
   display: block;
   box-sizing: border-box;
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.darkBlue};
 }
 
 p {
@@ -36,11 +37,11 @@ p {
 
 a {
   text-decoration: none;
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.darkBlue};
   display: block;
   cursor: pointer;
   &:hover {
-    color: ${(props) => props.theme.colors.grey};
+    /* color: ${(props) => props.theme.colors.grey}; */
   }
 }
 
@@ -54,7 +55,7 @@ button {
   cursor: pointer;
   background-color: transparent;
   &:hover {
-    color: ${(props) => props.theme.colors.grey};
+    /* color: ${(props) => props.theme.colors.grey}; */
   }
 }
 
