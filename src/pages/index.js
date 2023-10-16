@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import Text from "../components/Text";
+import { H1, H2, H3 } from "../styles/textStyles";
 import Button from "../components/global/Button";
 import Image from "next/image";
 import logo2 from "../../public/assets/logo2.png";
@@ -13,13 +13,30 @@ const Container = styled.div`
   justify-content: center;
   text-align: center;
   flex: 1;
-  gap: 25px;
   padding: 25px;
+  gap: 25px;
+  @media ${(props) => props.theme.minWidth.sm} {
+    gap: 35px;
+  }
 `;
 
 const Logo2 = styled(Image)`
   width: 77px;
   height: 90px;
+  @media ${(props) => props.theme.minWidth.sm} {
+    width: 108px;
+    height: 126px;
+  }
+  @media ${(props) => props.theme.minWidth.lg} {
+    width: 165px;
+    height: 193px;
+  }
+`;
+
+const StyledH1 = styled(H1)`
+  span {
+    display: block;
+  }
 `;
 
 export default function LandingPage() {
@@ -28,10 +45,12 @@ export default function LandingPage() {
       <Layout $islanding="true">
         <Container>
           <Logo2 src={logo2} alt="Logo 1" />
-          <Text type="h1">Un atelier partagé propulseur de créativité</Text>
-          <Text type="h3">97 rue Jean de Bernardy, 13001 Marseille</Text>
+          <StyledH1>
+            L&#39;atelier di Bernard, <span>lieu de création partagé</span>
+          </StyledH1>
+          <H3>97 rue Jean de Bernardy, 13001 Marseille</H3>
           <Button href="/homepage">
-            <Text type="h2">Entrer</Text>
+            <H3>Entrer</H3>
           </Button>
         </Container>
       </Layout>

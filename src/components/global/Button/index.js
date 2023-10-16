@@ -8,6 +8,10 @@ const StyledButton = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.darkBlue};
   background-color: white;
   box-shadow: 0px 2px 0px 0px #1f4d9b;
+  @media ${(props) => props.theme.minWidth.lg} {
+    box-shadow: 0px 7px 0px 0px #1f4d9b;
+    padding: 25px 50px;
+  }
 `;
 
 export default function Button({ href, external = false, children }) {

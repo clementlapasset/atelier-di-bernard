@@ -10,14 +10,21 @@ const StyledNav = styled.nav`
   border-bottom: ${({ $islanding, theme }) =>
     $islanding ? "1px solid white" : `1px solid ${theme.colors.darkBlue}`};
   padding: 10px 20px;
+  @media ${(props) => props.theme.minWidth.lg} {
+    padding: 15px 25px;
+  }
 `;
 
 const Logo = styled(Image)`
   width: 32px;
   height: 46px;
-  @media ${(props) => props.theme.minWidth.md} {
+  @media ${(props) => props.theme.minWidth.sm} {
     width: 42px;
     height: 60px;
+  }
+  @media ${(props) => props.theme.minWidth.lg} {
+    width: 90px;
+    height: 125px;
   }
 `;
 
