@@ -2,8 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 
-@import url('https://fonts.cdnfonts.com/css/haettenschweiler');
-
 * {
   margin: 0;
   padding: 0;

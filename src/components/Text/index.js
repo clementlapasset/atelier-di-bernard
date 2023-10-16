@@ -4,16 +4,22 @@ const styles = {
   h1: {
     fontSize: "30px",
     lineHeight: "33px",
-    letterSpacing: "3%",
+    letterSpacing: "1px",
     textTransform: "uppercase",
     textShadow: "0px 2px 0px #1F4D9B",
     WebkitTextStroke: "1px #1F4D9B",
     color: "white",
   },
+  h2: {
+    fontSize: "20px",
+    lineHeight: "20px",
+    letterSpacing: "0.6px",
+    textTransform: "uppercase",
+  },
   h3: {
     fontSize: "14px",
     lineHeight: "15px",
-    letterSpacing: "3%",
+    letterSpacing: "0.4px",
     textTransform: "uppercase",
   },
 };

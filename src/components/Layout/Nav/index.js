@@ -7,19 +7,23 @@ const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 2;
+  border-bottom: ${({ $islanding, theme }) =>
+    $islanding ? "1px solid white" : `1px solid ${theme.colors.darkBlue}`};
   padding: 10px 20px;
-  border-bottom: ${({ islanding }) =>
-    islanding ? "1px solid white" : "1px solid black"};
 `;
 
 const Logo = styled(Image)`
   width: 32px;
   height: 46px;
+  @media ${(props) => props.theme.minWidth.md} {
+    width: 42px;
+    height: 60px;
+  }
 `;
 
-export default function Nav({ islanding }) {
+export default function Nav({ $islanding }) {
   return (
-    <StyledNav islanding={islanding}>
+    <StyledNav $islanding={$islanding}>
       <Logo src={logo1} alt="Logo 1" />
     </StyledNav>
   );

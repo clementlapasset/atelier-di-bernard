@@ -10,20 +10,20 @@ export const metadata = {
 };
 
 const Wrapper = styled.div`
-  background-color: ${({ islanding, theme }) =>
-    islanding ? theme.colors.pink : "white"};
+  background-color: ${({ $islanding, theme }) =>
+    $islanding ? theme.colors.pink : "white"};
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 `;
 
-export default function Layout({ children, islanding }) {
+export default function Layout({ children, $islanding }) {
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Wrapper islanding={islanding}>
-          <Nav islanding={islanding} />
+        <Wrapper $islanding={$islanding}>
+          <Nav $islanding={$islanding} />
           {children}
         </Wrapper>
       </ThemeProvider>
