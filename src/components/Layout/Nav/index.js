@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import logo1 from "../../../../public/assets/logo1.png";
+import { H4 } from "@/styles/textStyles";
+import Menu from "./Menu";
 
 const StyledNav = styled.nav`
+  display: flex;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -28,10 +31,23 @@ const Logo = styled(Image)`
   }
 `;
 
+const NavContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+`;
+
 export default function Nav({ $islanding }) {
   return (
     <StyledNav $islanding={$islanding}>
       <Logo src={logo1} alt="Logo 1" />
+      {!$islanding && (
+        <NavContent>
+          <H4>- atelier partagé -</H4>
+          <Menu />
+        </NavContent>
+      )}
     </StyledNav>
   );
 }
