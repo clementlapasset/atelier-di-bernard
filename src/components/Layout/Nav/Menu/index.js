@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 import { H3 } from "@/styles/textStyles";
 
 const MenuContainer = styled.div`
@@ -9,7 +10,7 @@ const MenuContainer = styled.div`
   height: 100%;
 `;
 
-const MenuItem = styled(H3)`
+const MenuItem = styled(Link)`
   display: flex;
   align-items: center;
   border-left: 1px solid ${(props) => props.theme.colors.darkBlue};
@@ -17,7 +18,9 @@ const MenuItem = styled(H3)`
   padding: 0 15px;
   &:nth-child(2) {
     background-color: ${(props) => props.theme.colors.darkBlue};
-    color: white;
+    & > ${H3} {
+      color: white;
+    }
   }
   @media ${(props) => props.theme.minWidth.sm} {
     padding: 0 30px;
@@ -30,8 +33,12 @@ const MenuItem = styled(H3)`
 export default function Menu() {
   return (
     <MenuContainer>
-      <MenuItem>Évènements</MenuItem>
-      <MenuItem>Résidents</MenuItem>
+      <MenuItem href="/homepage#events">
+        <H3>Évènements</H3>
+      </MenuItem>
+      <MenuItem href="/homepage#residents">
+        <H3>Résidents</H3>
+      </MenuItem>
     </MenuContainer>
   );
 }
